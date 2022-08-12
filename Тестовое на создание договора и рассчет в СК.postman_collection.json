@@ -1,0 +1,1482 @@
+{
+	"info": {
+		"_postman_id": "6fd44e51-f98d-441e-970c-25168bc92796",
+		"name": "Тестовое на создание договора и рассчет в СК",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18604873"
+	},
+	"item": [
+		{
+			"name": "Аутентификация",
+			"item": [
+				{
+					"name": "Запрос на токен",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sec-ch-ua",
+								"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "https://partner.agentapp.ru/"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"{{username}}\",\r\n\"password\":\"{{password}}\"}"
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/users/obtain-token",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"users",
+								"obtain-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Запрос на токен Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sec-ch-ua",
+										"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"102\", \"Google Chrome\";v=\"102\""
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "Cache-Control",
+										"value": "no-cache"
+									},
+									{
+										"key": "Referer",
+										"value": "https://partner.agentapp.ru/"
+									},
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"Windows\""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"{{username}}\",\r\n\"password\":\"{{password}}\"}"
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/users/obtain-token",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"users",
+										"obtain-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 08:39:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Текущий пользователь",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/users/current_user",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"users",
+								"current_user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/users/current_user",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"users",
+										"current_user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 08:40:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12156"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6cbab51d-11eb-44cc-ba24-a62105718129\",\n    \"username\": \"qa@qa.qa\",\n    \"first_name\": \"Отдел\",\n    \"last_name\": \"ТЗ\",\n    \"patronymic\": \"Тестирования\",\n    \"phone_number\": null,\n    \"verifiers\": {\n        \"CITY_VERIFICATION\": {\n            \"is_verified\": true,\n            \"is_system_locked\": false\n        }\n    },\n    \"department\": {\n        \"id\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\",\n        \"title\": \"Тест2\",\n        \"parent\": \"2877cff8-c44e-4cd5-b210-e11740cb9730\",\n        \"parent_title\": \"Тест Тест\",\n        \"is_balance_activated\": true,\n        \"is_entity_details_required\": true,\n        \"is_grab_legal_data\": true,\n        \"is_grab_natural_data\": true,\n        \"is_grab_self_employed_data\": true,\n        \"is_available_self_payoff\": false,\n        \"paid_by_up\": false,\n        \"is_available_mutual_act_creation\": false,\n        \"has_active_bank_cards\": null,\n        \"legal_type\": \"LEGAL\",\n        \"users\": [\n            {\n                \"id\": \"6cbab51d-11eb-44cc-ba24-a62105718129\",\n                \"username\": \"qa@qa.qa\",\n                \"department\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\",\n                \"first_name\": \"Отдел\",\n                \"last_name\": \"ТЗ\",\n                \"patronymic\": \"Тестирования\",\n                \"phone_number\": null,\n                \"groups\": [],\n                \"is_active\": true,\n                \"is_online\": false\n            },\n            {\n                \"id\": \"23b012db-2801-4585-98d4-050c23c072f5\",\n                \"username\": \"e.fomichev89@b2bpolis.ru\",\n                \"department\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\",\n                \"first_name\": \"Тест\",\n                \"last_name\": \"Тест\",\n                \"patronymic\": \"\",\n                \"phone_number\": \"+76044546504\",\n                \"groups\": [\n                    {\n                        \"name\": \"Агент\",\n                        \"code\": \"DEPARTMENT_ADMIN\"\n                    },\n                    {\n                        \"name\": \"Брокер с субагентами\",\n                        \"code\": \"BROKER\"\n                    }\n                ],\n                \"is_active\": true,\n                \"is_online\": false\n            }\n        ],\n        \"referral_link\": null,\n        \"integrated_company\": {\n            \"ABSOLUTE\": [\n                {\n                    \"id\": \"4dd9135e-41de-42de-b800-76a74f23ce5a\",\n                    \"title\": \"Абсолют 4.1\",\n                    \"code\": \"ABSOLUTE_4_1\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"ABSOLUTE\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"ALPHA_STRAH\": [\n                {\n                    \"id\": \"eb18cfe0-5617-405c-9183-cec35057e7ea\",\n                    \"title\": \"АльфаСтрахование 1\",\n                    \"code\": \"ALPHA_STRAH_1\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": true\n                },\n                {\n                    \"id\": \"cf90abc0-faae-4567-8218-ee94e17c5a65\",\n                    \"title\": \"АльфаСтрахование  2.3\",\n                    \"code\": \"ALPHA_STRAH_2_3\",\n                    \"is_default\": false,\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"ASTRO_VOLGA\": [\n                {\n                    \"id\": \"2d8b5caa-40e1-42f4-b49f-ab0d42dcf227\",\n                    \"title\": \"Астро-Волга\",\n                    \"code\": \"ASTRO_VOLGA\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"ASTRO_VOLGA\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"VSK\": [\n                {\n                    \"id\": \"7becd158-bbe9-488d-9ce3-9f7dd77cd221\",\n                    \"title\": \"ВСК 1\",\n                    \"code\": \"VSK\",\n                    \"is_default\": false,\n                    \"integrated_company__code\": \"VSK\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"ZETTA\": [\n                {\n                    \"id\": \"3cad4f11-79f4-4661-9d08-02728b50bd2f\",\n                    \"title\": \"Зетта\",\n                    \"code\": \"ZETTA\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"ZETTA\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"INGOSSTRAH\": [\n                {\n                    \"id\": \"09dca00d-95f4-4390-838a-56475426a7c8\",\n                    \"title\": \"Ингосстрах 1\",\n                    \"code\": \"INGOSSTRAH_1\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"INGOSSTRAH\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"MAKS\": [\n                {\n                    \"id\": \"099e7b4c-32bc-4287-8eb9-eb550fa23047\",\n                    \"title\": \"Макс 1\",\n                    \"code\": \"MAKS_1\",\n                    \"is_default\": false,\n                    \"integrated_company__code\": \"MAKS\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"RENAISSANCE\": [\n                {\n                    \"id\": \"05021537-1c37-4852-a90e-d790ef6d44d1\",\n                    \"title\": \"Ренессанс\",\n                    \"code\": \"RENAISSANCE\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"RENAISSANCE\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"RGS\": [\n                {\n                    \"id\": \"79d253be-8c52-4366-99e3-d7a3d664b468\",\n                    \"title\": \"Росгосстрах\",\n                    \"code\": \"RGS\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"RGS\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": true\n                }\n            ],\n            \"SOGAZ\": [\n                {\n                    \"id\": \"97206989-bd91-4014-9ae0-f31b174c3172\",\n                    \"title\": \"Согаз 1\",\n                    \"code\": \"SOGAZ_1\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"SOGAZ\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"SOGLASIE\": [\n                {\n                    \"id\": \"286822fd-41ca-457f-946f-302494f3cf1f\",\n                    \"title\": \"Согласие\",\n                    \"code\": \"SOGLASIE\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"SOGLASIE\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"TINKOFF\": [\n                {\n                    \"id\": \"8b6f635d-fb33-4003-8527-1a8a2fec059c\",\n                    \"title\": \"Тинькофф\",\n                    \"code\": \"TINKOFF\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"TINKOFF\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ],\n            \"ENERGOGARANT\": [\n                {\n                    \"id\": \"5871b21b-02a3-4ec5-a12c-7e043b9626e8\",\n                    \"title\": \"Энергогарант 1\",\n                    \"code\": \"ENERGOGARANT_1\",\n                    \"is_default\": true,\n                    \"integrated_company__code\": \"ENERGOGARANT\",\n                    \"is_egarant\": false,\n                    \"skip_calculate_without_chosen\": false,\n                    \"may_work_with_previous_driver_license\": false\n                }\n            ]\n        },\n        \"minikasko_integrated_company\": {\n            \"ALPHA_STRAH\": [\n                {\n                    \"id\": \"c0ee26db-dd30-4176-aed0-fa4151b2a3f1\",\n                    \"title\": \"Мини-Каско Альфа Дай пять\",\n                    \"code\": \"MINIKASKO_ALPHA_DAI_5\",\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"23540f7b-2a86-4979-a06f-36bad723e793\",\n                    \"title\": \"Мини-Каско Альфа КАСКО в десятку\",\n                    \"code\": \"MINIKASKO_ALPHA_TO_10\",\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"9aaaaaec-026c-45b1-bade-2ec47bc5dca9\",\n                    \"title\": \"Мини-Каско Альфа КАСКО за 3\",\n                    \"code\": \"MINIKASKO_ALPHA_FOR_3\",\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"334d9884-3f6b-4caa-b9f1-47a75711c51f\",\n                    \"title\": \"Мини-Каско Альфа КАСКО от бесполисных\",\n                    \"code\": \"MINIKASKO_ALPHA_AGAINST_NO_POLICIES\",\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"aeef9259-6b7e-4972-a250-663c4870ed5f\",\n                    \"title\": \"Мини-Каско Альфа КАСКО от чужих ошибок\",\n                    \"code\": \"MINIKASKO_ALPHA_AGAINST_OTHERS\",\n                    \"integrated_company__code\": \"ALPHA_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                }\n            ],\n            \"SBER_STRAH\": [\n                {\n                    \"id\": \"63d1cc76-69fa-4c6b-b685-093e83c6eb6d\",\n                    \"title\": \"Мини-Каско Сбербанк ЛАЙТ\",\n                    \"code\": \"MINIKASKO_SBERBANK_LIGHT\",\n                    \"integrated_company__code\": \"SBER_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"b1e65067-2b4c-4b12-88b1-5bba80736c27\",\n                    \"title\": \"Мини-Каско Сбербанк МАКС\",\n                    \"code\": \"MINIKASKO_SBERBANK_MAX\",\n                    \"integrated_company__code\": \"SBER_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                },\n                {\n                    \"id\": \"d3d97d8a-a7c5-4bae-aa21-6409e6b12969\",\n                    \"title\": \"Мини-Каско Сбербанк СТАНДАРТ\",\n                    \"code\": \"MINIKASKO_SBERBANK_STANDARD\",\n                    \"integrated_company__code\": \"SBER_STRAH\",\n                    \"skip_calculate_without_chosen\": false\n                }\n            ],\n            \"TINKOFF\": [\n                {\n                    \"id\": \"6566d734-ed1e-4cfa-998e-f8a6aef31c2c\",\n                    \"title\": \"Мини-Каско Тинькофф Драйв Оптимум\",\n                    \"code\": \"MINIKASKO_TINKOFF_OPTIMUM\",\n                    \"integrated_company__code\": \"TINKOFF\",\n                    \"skip_calculate_without_chosen\": true\n                }\n            ]\n        },\n        \"curators\": [\n            {\n                \"first_name\": \"Тест\",\n                \"last_name\": \"Тест\",\n                \"patronymic\": \"\",\n                \"username\": \"garbage@inssmart.ru\",\n                \"phone_number\": null\n            }\n        ],\n        \"skk_code\": null,\n        \"other_partner\": null,\n        \"legal_info\": {\n            \"legal_data\": null,\n            \"bank_data\": null,\n            \"account\": null\n        },\n        \"natural_info\": {\n            \"id\": \"b49c6c7c-c513-4f49-8e5e-4f918cd2d09a\",\n            \"credential\": [],\n            \"created_at\": \"2020-02-04T23:45:41.128697+03:00\",\n            \"updated_at\": \"2020-02-04T23:45:41.128743+03:00\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"patronymic\": \"\",\n            \"birth_date\": null,\n            \"INN\": null,\n            \"SNILS\": null,\n            \"gender\": null,\n            \"phone\": null,\n            \"department\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\"\n        },\n        \"self_employed_info\": {\n            \"id\": \"22495b9d-0552-489e-8545-1b1b212d7757\",\n            \"credential\": [],\n            \"address\": [],\n            \"status\": null,\n            \"created_at\": \"2020-07-22T19:05:37.453710+03:00\",\n            \"updated_at\": \"2020-07-22T19:05:37.453733+03:00\",\n            \"first_name\": null,\n            \"last_name\": null,\n            \"patronymic\": null,\n            \"birth_date\": null,\n            \"INN\": null,\n            \"account\": null,\n            \"bank_data\": null,\n            \"gender\": null,\n            \"phone\": null,\n            \"department\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\"\n        },\n        \"is_extended_commission\": false,\n        \"bonuses\": [\n            {\n                \"created_at\": \"2022-06-06T00:31:17.052012+03:00\",\n                \"end_date\": \"2022-06-13\",\n                \"title\": \"Оформляй более 7 договоров ОСАГО в неделю и зарабатывай дополнительно 2% по каждому договору\",\n                \"status\": \"IN_PROGRESS\",\n                \"potential_amount\": 0,\n                \"progress\": 0,\n                \"banner_url\": \"/media/bonuses/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80-02.jpg\",\n                \"bonus_settings\": {\n                    \"required_agreements\": 7,\n                    \"agreement_min_amount\": 0\n                },\n                \"bonus_type\": \"AGREEMENT_ISSUE_MORE_PER_WEEK\",\n                \"bonus_amount\": 2,\n                \"bonus_amount_type\": \"PERCENT\"\n            }\n        ],\n        \"region\": \"30220\",\n        \"addition_info\": null,\n        \"apply_nds\": false,\n        \"admin\": {\n            \"phone\": \"+76044546504\",\n            \"email\": \"e.fomichev89@b2bpolis.ru\"\n        },\n        \"has_online_users\": false,\n        \"activity\": {\n            \"status\": \"FILLED_OUT_POLICY\",\n            \"department\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\",\n            \"updated_at\": \"2022-06-10T11:40:05.135549+03:00\",\n            \"last_activity_date\": \"2022-06-10\",\n            \"last_payment_date\": null,\n            \"activity\": [\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 147,\n                    \"start_date\": \"2022-06-06\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 469,\n                    \"start_date\": \"2022-05-30\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 514,\n                    \"start_date\": \"2022-05-23\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 69,\n                    \"start_date\": \"2022-05-16\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 527,\n                    \"start_date\": \"2022-05-09\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 1475,\n                    \"start_date\": \"2022-05-02\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 1300,\n                    \"start_date\": \"2022-04-25\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 366,\n                    \"start_date\": \"2022-04-18\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 154,\n                    \"start_date\": \"2022-04-11\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 3,\n                    \"start_date\": \"2022-04-04\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 6,\n                    \"start_date\": \"2022-03-28\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 15,\n                    \"start_date\": \"2022-03-14\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 2,\n                    \"start_date\": \"2022-03-07\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 39,\n                    \"start_date\": \"2022-02-14\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 7,\n                    \"start_date\": \"2022-02-07\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 48,\n                    \"start_date\": \"2022-01-31\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 99,\n                    \"start_date\": \"2022-01-24\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 193,\n                    \"start_date\": \"2022-01-17\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 225,\n                    \"start_date\": \"2022-01-10\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 55,\n                    \"start_date\": \"2022-01-03\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 138,\n                    \"start_date\": \"2021-12-27\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 144,\n                    \"start_date\": \"2021-12-20\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 473,\n                    \"start_date\": \"2021-12-13\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 167,\n                    \"start_date\": \"2021-12-06\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 88,\n                    \"start_date\": \"2021-11-29\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 2,\n                    \"start_date\": \"2021-10-18\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 156,\n                    \"start_date\": \"2021-10-11\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 107,\n                    \"start_date\": \"2021-10-04\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 91,\n                    \"start_date\": \"2021-09-27\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 351,\n                    \"start_date\": \"2021-09-20\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 85,\n                    \"start_date\": \"2021-09-13\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 342,\n                    \"start_date\": \"2021-09-06\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 193,\n                    \"start_date\": \"2021-08-30\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 17,\n                    \"start_date\": \"2021-08-23\"\n                },\n                {\n                    \"status\": \"FILLED_OUT_POLICY\",\n                    \"agreements_count\": 144,\n                    \"start_date\": \"2021-08-16\"\n                }\n            ],\n            \"registration_date\": \"2020-02-04\"\n        },\n        \"has_prolongations\": false\n    },\n    \"permissions\": [],\n    \"groups\": [],\n    \"chat_hash\": \"a60c60658c56f08ceb800937015ed3273c3439f3e37c7541f48fa3aa94960f73\",\n    \"city_kladr\": \"7800000000000\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Водитель/Собственник/Страхователь/Автомобиль",
+			"item": [
+				{
+					"name": "Запрос на создание водителя",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Водитель создан: код ответа 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Леся\",\r\n  \"last_name\": \"Гурбановская\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"driving_experience_started\": \"2017-05-30\",\r\n  \"driver_licenses\": [\r\n    {\r\n      \"credential_type\": \"DRIVER_LICENSE\",\r\n      \"number\": \"619604\",\r\n      \"series\": \"7030\",\r\n      \"issue_date\": \"2017-05-30\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/drivers",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"insured_objects",
+								"drivers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Запрос на создание водителя Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Леся\",\r\n  \"last_name\": \"Гурбановская\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"driving_experience_started\": \"2017-05-30\",\r\n  \"driver_licenses\": [\r\n    {\r\n      \"credential_type\": \"DRIVER_LICENSE\",\r\n      \"number\": \"619604\",\r\n      \"series\": \"7030\",\r\n      \"issue_date\": \"2017-05-30\"\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/drivers",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"insured_objects",
+										"drivers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 08:52:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "545"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"fb542292-ca24-4e9c-b99a-437adcfb7b86\",\n    \"fact_address\": null,\n    \"legal_address\": null,\n    \"contact\": [],\n    \"driver_licenses\": [\n        {\n            \"number\": \"619604\",\n            \"series\": \"7030\",\n            \"issue_date\": \"2017-05-30\",\n            \"credential_type\": \"DRIVER_LICENSE\"\n        }\n    ],\n    \"first_name\": \"Леся\",\n    \"last_name\": \"Гурбановская\",\n    \"patronymic\": \"Богдановна\",\n    \"previous_last_name\": null,\n    \"birth_date\": \"1976-06-15\",\n    \"gender\": \"M\",\n    \"driving_experience_started\": \"2017-05-30\",\n    \"is_rsa_checked\": false,\n    \"is_kbm_found\": false,\n    \"kbm_value\": \"1.00\",\n    \"previous_policy_serial\": null,\n    \"previous_policy_number\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Создание собственника",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Собственник создан: код ответа 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"last_name\": \"Гурбановская\",\r\n  \"first_name\": \"Леся\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n      \"issue_date\": \"2017-03-08\",\r\n      \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\r\n      \"issue_point_code\": \"700-002\",\r\n      \"number\": \"865497\",\r\n      \"series\": \"6919\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"ACTUAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/owners/natural_persons",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"insured_objects",
+								"owners",
+								"natural_persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создание собственника Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"last_name\": \"Гурбановская\",\r\n  \"first_name\": \"Леся\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n      \"issue_date\": \"2017-03-08\",\r\n      \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\r\n      \"issue_point_code\": \"700-002\",\r\n      \"number\": \"865497\",\r\n      \"series\": \"6919\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"ACTUAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/owners/natural_persons",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"insured_objects",
+										"owners",
+										"natural_persons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 08:58:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2297"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c1b07e48-2512-44e1-82df-a125aa1971c7\",\n    \"credential\": [\n        {\n            \"issue_date\": \"2017-03-08\",\n            \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\n            \"issue_point_code\": \"700-002\",\n            \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\n            \"number\": \"865497\",\n            \"series\": \"6919\"\n        }\n    ],\n    \"address\": [\n        {\n            \"data\": {},\n            \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n            \"address_type\": \"ACTUAL_ADDRESS\",\n            \"region_kladr_id\": \"7000000000000\",\n            \"city_kladr_id\": \"7000000100000\",\n            \"settlement_kladr_id\": null,\n            \"street_kladr_id\": null,\n            \"house_kladr_id\": null,\n            \"is_without_flat\": true,\n            \"house\": null,\n            \"block\": null,\n            \"flat\": null,\n            \"region_fias_id\": null,\n            \"city_fias_id\": null,\n            \"settlement_fias_id\": null,\n            \"street_fias_id\": null\n        },\n        {\n            \"data\": {},\n            \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n            \"address_type\": \"LEGAL_ADDRESS\",\n            \"region_kladr_id\": \"7000000000000\",\n            \"city_kladr_id\": \"7000000100000\",\n            \"settlement_kladr_id\": null,\n            \"street_kladr_id\": null,\n            \"house_kladr_id\": null,\n            \"is_without_flat\": true,\n            \"house\": null,\n            \"block\": null,\n            \"flat\": null,\n            \"region_fias_id\": null,\n            \"city_fias_id\": null,\n            \"settlement_fias_id\": null,\n            \"street_fias_id\": null\n        }\n    ],\n    \"person\": \"bc28ae69-a7a7-4135-9163-de19ac923eef\",\n    \"fact_address\": {\n        \"data\": {},\n        \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n        \"address_type\": \"ACTUAL_ADDRESS\",\n        \"region_kladr_id\": \"7000000000000\",\n        \"city_kladr_id\": \"7000000100000\",\n        \"settlement_kladr_id\": null,\n        \"street_kladr_id\": null,\n        \"house_kladr_id\": null,\n        \"is_without_flat\": true,\n        \"house\": null,\n        \"block\": null,\n        \"flat\": null,\n        \"region_fias_id\": null,\n        \"city_fias_id\": null,\n        \"settlement_fias_id\": null,\n        \"street_fias_id\": null\n    },\n    \"legal_address\": {\n        \"data\": {},\n        \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n        \"address_type\": \"LEGAL_ADDRESS\",\n        \"region_kladr_id\": \"7000000000000\",\n        \"city_kladr_id\": \"7000000100000\",\n        \"settlement_kladr_id\": null,\n        \"street_kladr_id\": null,\n        \"house_kladr_id\": null,\n        \"is_without_flat\": true,\n        \"house\": null,\n        \"block\": null,\n        \"flat\": null,\n        \"region_fias_id\": null,\n        \"city_fias_id\": null,\n        \"settlement_fias_id\": null,\n        \"street_fias_id\": null\n    },\n    \"contact\": [],\n    \"first_name\": \"Леся\",\n    \"last_name\": \"Гурбановская\",\n    \"patronymic\": \"Богдановна\",\n    \"previous_last_name\": null,\n    \"birth_date\": \"1976-06-15\",\n    \"gender\": \"M\",\n    \"driving_experience_started\": null,\n    \"is_rsa_checked\": false,\n    \"is_kbm_found\": false,\n    \"kbm_value\": \"1.00\",\n    \"previous_policy_serial\": null,\n    \"previous_policy_number\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Создание страхователя",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Страхователь создан: код ответа 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"last_name\": \"Гурбановская\",\r\n  \"first_name\": \"Леся\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n      \"issue_date\": \"2019-06-27\",\r\n      \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\r\n      \"issue_point_code\": \"700-002\",\r\n      \"number\": \"865497\",\r\n      \"series\": \"6919\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"ACTUAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    }\r\n  ],\r\n   \"contact\": [\r\n        {\r\n            \"contact_type\": \"PHONE\",\r\n            \"data\": \"+79992061450\"\r\n        },\r\n        {\r\n            \"contact_type\": \"EMAIL\",\r\n            \"data\": \"natahodyr@yandex.ru\"\r\n        }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/insurants/natural_persons",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"insured_objects",
+								"insurants",
+								"natural_persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создание страхователя Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"last_name\": \"Гурбановская\",\r\n  \"first_name\": \"Леся\",\r\n  \"patronymic\": \"Богдановна\",\r\n  \"birth_date\": \"1976-06-15\",\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n      \"issue_date\": \"2019-06-27\",\r\n      \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\r\n      \"issue_point_code\": \"700-002\",\r\n      \"number\": \"865497\",\r\n      \"series\": \"6919\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n    {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"ACTUAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    }\r\n  ],\r\n   \"contact\": [\r\n        {\r\n            \"contact_type\": \"PHONE\",\r\n            \"data\": \"+79992061450\"\r\n        },\r\n        {\r\n            \"contact_type\": \"EMAIL\",\r\n            \"data\": \"natahodyr@yandex.ru\"\r\n        }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/insurants/natural_persons",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"insured_objects",
+										"insurants",
+										"natural_persons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 09:06:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2427"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7b7fbf42-5820-4f5b-a171-3609bfe107c0\",\n    \"credential\": [\n        {\n            \"issue_date\": \"2019-06-27\",\n            \"issue_point\": \"УФМС РОССИИ ПО ТОМСКОЙ ОБЛАСТИ\",\n            \"issue_point_code\": \"700-002\",\n            \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\n            \"number\": \"865497\",\n            \"series\": \"6919\"\n        }\n    ],\n    \"address\": [\n        {\n            \"data\": {},\n            \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n            \"address_type\": \"ACTUAL_ADDRESS\",\n            \"region_kladr_id\": \"7000000000000\",\n            \"city_kladr_id\": \"7000000100000\",\n            \"settlement_kladr_id\": null,\n            \"street_kladr_id\": null,\n            \"house_kladr_id\": null,\n            \"is_without_flat\": true,\n            \"house\": null,\n            \"block\": null,\n            \"flat\": null,\n            \"region_fias_id\": null,\n            \"city_fias_id\": null,\n            \"settlement_fias_id\": null,\n            \"street_fias_id\": null\n        },\n        {\n            \"data\": {},\n            \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n            \"address_type\": \"LEGAL_ADDRESS\",\n            \"region_kladr_id\": \"7000000000000\",\n            \"city_kladr_id\": \"7000000100000\",\n            \"settlement_kladr_id\": null,\n            \"street_kladr_id\": null,\n            \"house_kladr_id\": null,\n            \"is_without_flat\": true,\n            \"house\": null,\n            \"block\": null,\n            \"flat\": null,\n            \"region_fias_id\": null,\n            \"city_fias_id\": null,\n            \"settlement_fias_id\": null,\n            \"street_fias_id\": null\n        }\n    ],\n    \"person\": \"d25f001b-267f-4065-a913-e75d1ab3350a\",\n    \"fact_address\": {\n        \"data\": {},\n        \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n        \"address_type\": \"ACTUAL_ADDRESS\",\n        \"region_kladr_id\": \"7000000000000\",\n        \"city_kladr_id\": \"7000000100000\",\n        \"settlement_kladr_id\": null,\n        \"street_kladr_id\": null,\n        \"house_kladr_id\": null,\n        \"is_without_flat\": true,\n        \"house\": null,\n        \"block\": null,\n        \"flat\": null,\n        \"region_fias_id\": null,\n        \"city_fias_id\": null,\n        \"settlement_fias_id\": null,\n        \"street_fias_id\": null\n    },\n    \"legal_address\": {\n        \"data\": {},\n        \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n        \"address_type\": \"LEGAL_ADDRESS\",\n        \"region_kladr_id\": \"7000000000000\",\n        \"city_kladr_id\": \"7000000100000\",\n        \"settlement_kladr_id\": null,\n        \"street_kladr_id\": null,\n        \"house_kladr_id\": null,\n        \"is_without_flat\": true,\n        \"house\": null,\n        \"block\": null,\n        \"flat\": null,\n        \"region_fias_id\": null,\n        \"city_fias_id\": null,\n        \"settlement_fias_id\": null,\n        \"street_fias_id\": null\n    },\n    \"contact\": [\n        {\n            \"contact_type\": \"EMAIL\",\n            \"data\": \"natahodyr@yandex.ru\",\n            \"comment\": null\n        },\n        {\n            \"contact_type\": \"PHONE\",\n            \"data\": \"+79992061450\",\n            \"comment\": null\n        }\n    ],\n    \"first_name\": \"Леся\",\n    \"last_name\": \"Гурбановская\",\n    \"patronymic\": \"Богдановна\",\n    \"previous_last_name\": null,\n    \"birth_date\": \"1976-06-15\",\n    \"gender\": \"M\",\n    \"driving_experience_started\": null,\n    \"is_rsa_checked\": false,\n    \"is_kbm_found\": false,\n    \"kbm_value\": \"1.00\",\n    \"previous_policy_serial\": null,\n    \"previous_policy_number\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Создание автомобиля",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Автомобиль создан: код ответа 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"car_model_id\": 261020578,\r\n  \"engine_power\": 110,\r\n  \"vin_number\": \"SJNFCAE11U1230880\",\r\n  \"number_plate\": \"P617EC70\",\r\n  \"manufacturing_year\": 2007,\r\n  \"max_mass\": null,\r\n  \"has_trailer\": false,\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"VEHICLE_REGISTRATION\",\r\n      \"issue_date\": \"2010-11-01\",\r\n      \"number\": \"204326\",\r\n      \"series\": \"70PM\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/cars",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"insured_objects",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создание автомобиля Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"car_model_id\": 501017543,\r\n  \"engine_power\": 211,\r\n  \"vin_number\": \"WAUZZZ8T4BA037241\",\r\n  \"number_plate\": \"Р904МХ178\",\r\n  \"manufacturing_year\": 2010,\r\n  \"max_mass\": null,\r\n  \"has_trailer\": false,\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"VEHICLE_REGISTRATION\",\r\n      \"issue_date\": \"2010-11-01\",\r\n      \"number\": \"67461\",\r\n      \"series\": \"78УН\"\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/cars",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"insured_objects",
+										"cars"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 09:19:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "991"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"246c36f6-8f85-4cf7-8570-b2fe1b9b46da\",\n    \"credential\": [\n        {\n            \"id\": \"932a4ce7-5d11-481b-8536-7f89380c3e50\",\n            \"issue_date\": \"2010-11-01\",\n            \"number\": \"67461\",\n            \"series\": \"78УН\",\n            \"credential_type\": \"VEHICLE_REGISTRATION\",\n            \"expiration_date\": null\n        },\n        {\n            \"id\": \"f2c7e747-c52f-4b6a-b214-b3979348c581\",\n            \"issue_date\": \"2022-05-07\",\n            \"number\": \"104620892201882\",\n            \"series\": null,\n            \"credential_type\": \"DIAGNOSTIC_CHART\",\n            \"expiration_date\": \"2023-05-07\"\n        }\n    ],\n    \"car_mark\": \"ВАЗ/Lada\",\n    \"car_mark_id\": \"279\",\n    \"car_type\": \"B\",\n    \"car_model\": \"2114\",\n    \"rsa_code\": \"501017543\",\n    \"vin_number\": \"WAUZZZ8T4BA037241\",\n    \"car_body_number\": null,\n    \"chassis_number\": null,\n    \"car_model_id\": \"501017543\",\n    \"car_modification\": null,\n    \"car_modification_id\": null,\n    \"transdekra_id\": null,\n    \"transdekra_modification\": null,\n    \"manufacturing_year\": 2010,\n    \"number_plate\": \"Р904МХ178\",\n    \"has_trailer\": false,\n    \"is_foreign\": false,\n    \"color\": null,\n    \"engine_displacement\": null,\n    \"engine_power\": 211,\n    \"pts_mark\": null,\n    \"pts_model\": null,\n    \"max_mass\": null,\n    \"seats_count\": null,\n    \"is_rsa_checked\": false,\n    \"is_deprecated\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Объединение и рассчет",
+			"item": [
+				{
+					"name": "Объект страхования",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Обхект страхования создан: код ответа 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drivers\": [\r\n        \"{{driver_id}}\"\r\n        ],\r\n    \"owner\": \"{{owner_id}}\",\r\n    \"car\": \"{{car_id}}\",\r\n    \"insurant\": \"{{insurant_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"insured_objects",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Объект страхования Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"drivers\": [\r\n        \"{{driver_id}}\"\r\n        ],\r\n    \"owner\": \"{{owner_id}}\",\r\n    \"car\": \"{{car_id}}\",\r\n    \"insurant\": \"{{insurant_id}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/insured_objects/",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"insured_objects",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 09:26:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"63bde216-fed7-44b6-8ddf-e62612d6af10\",\n    \"drivers\": [\n        \"fb542292-ca24-4e9c-b99a-437adcfb7b86\"\n    ],\n    \"car\": \"246c36f6-8f85-4cf7-8570-b2fe1b9b46da\",\n    \"owner\": \"bc28ae69-a7a7-4135-9163-de19ac923eef\",\n    \"insurant\": \"d25f001b-267f-4065-a913-e75d1ab3350a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Создание договора",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Договор создан, код ответа 200 или 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"valid_from\": \"2022-06-30\",\r\n  \"valid_to\": \"2023-06-29\",\r\n  \"insurance_period\": 8,\r\n  \"target_of_using\": 11,\r\n  \"drivers_ids\": [\"{{driver_id}}\"],\r\n  \"is_car_without_registration\": false,\r\n  \"engine_power\": 110,\r\n  \"has_car_trailer\": false,\r\n  \"car_type\": \"B\",\r\n  \"owner_registration\":   {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n  \"periods\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/v3/agreements/calculations",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v3",
+								"agreements",
+								"calculations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создание договора Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"valid_from\": \"2022-06-30\",\r\n  \"valid_to\": \"2023-06-29\",\r\n  \"insurance_period\": 8,\r\n  \"target_of_using\": 11,\r\n  \"drivers_ids\": [\"{{driver_id}}\"],\r\n  \"is_car_without_registration\": false,\r\n  \"engine_power\": 211,\r\n  \"has_car_trailer\": false,\r\n  \"car_type\": \"B\",\r\n  \"owner_registration\":   {\r\n      \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\r\n      \"address_type\": \"LEGAL_ADDRESS\",\r\n      \"region_kladr_id\": \"7000000000000\",\r\n      \"city_kladr_id\": \"7000000100000\"\r\n    },\r\n  \"periods\": []\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/agreements/calculations",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"agreements",
+										"calculations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 09:36:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1480"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"da2abaa7-0f47-4016-ad02-f7f9330e77bc\",\n    \"origin\": null,\n    \"valid_from\": \"2022-06-30T00:00:00+03:00\",\n    \"valid_to\": \"2023-06-29T23:59:59.999999+03:00\",\n    \"periods\": [],\n    \"calculation\": {\n        \"is_default\": false,\n        \"premium\": 11568.23,\n        \"data\": {\n            \"valid_from\": \"2022-06-30\",\n            \"valid_to\": \"2023-06-29\",\n            \"insurance_period\": 8,\n            \"target_of_using\": \"PERSONAL\",\n            \"drivers_ids\": [\n                \"fb542292-ca24-4e9c-b99a-437adcfb7b86\"\n            ],\n            \"is_car_without_registration\": false,\n            \"engine_power\": 211,\n            \"has_car_trailer\": false,\n            \"car_type\": \"B\",\n            \"owner_registration\": {\n                \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n                \"address_type\": \"LEGAL_ADDRESS\",\n                \"region_kladr_id\": \"7000000000000\",\n                \"city_kladr_id\": \"7000000100000\",\n                \"code_kladr\": \"7000000100000\",\n                \"okato\": \"69401000000\",\n                \"kt1\": 1.54,\n                \"kt2\": 1\n            },\n            \"periods\": [],\n            \"drivers\": [\n                {\n                    \"birth_date\": \"1976-06-15\",\n                    \"driving_experience_started\": \"2017-05-30\",\n                    \"credential\": [\n                        {\n                            \"number\": \"619604\",\n                            \"series\": \"7030\",\n                            \"issue_date\": \"2017-05-30\",\n                            \"credential_type\": \"DRIVER_LICENSE\"\n                        }\n                    ],\n                    \"first_name\": \"Леся\",\n                    \"last_name\": \"Гурбановская\",\n                    \"previous_last_name\": null,\n                    \"patronymic\": \"Богдановна\"\n                }\n            ],\n            \"max_mass\": 0,\n            \"seats_count\": 0,\n            \"is_multidrive\": false,\n            \"insurance_period_kterm\": \"1.00\",\n            \"insurance_period_month\": 12,\n            \"insurant_type\": \"NATURAL_PERSON\",\n            \"kbm\": 1,\n            \"is_kbm_request_with_error\": true\n        },\n        \"coeffs\": {\n            \"Tbase_min\": 2746,\n            \"Tbase_max\": 4942,\n            \"Ktrailer\": 1,\n            \"Kregion\": 1.54,\n            \"Kengine\": 1.6,\n            \"Kexpage\": 0.95,\n            \"Klim\": 1,\n            \"Kterm\": 1,\n            \"Kbm\": 1,\n            \"kbm_class\": \"4\",\n            \"S_min\": 6427.84\n        }\n    },\n    \"status\": \"DRAFT\",\n    \"insured_object\": null,\n    \"prolongation\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновление договора",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"insured_object\": \"{{insured_object}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/agreements/{{agreement_id}}",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"agreements",
+								"{{agreement_id}}"
+							],
+							"query": [
+								{
+									"key": "insured_object",
+									"value": "136095c9-243c-423f-988c-4abcdf117114",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Обновление договора Response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"insured_object\": \"{{insured_object}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/{{api_v1}}/agreements/{{agreement_id}}",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{api_v1}}",
+										"agreements",
+										"{{agreement_id}}"
+									],
+									"query": [
+										{
+											"key": "insured_object",
+											"value": "136095c9-243c-423f-988c-4abcdf117114",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 09:40:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1514"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PATCH, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"da2abaa7-0f47-4016-ad02-f7f9330e77bc\",\n    \"origin\": null,\n    \"valid_from\": \"2022-06-30T00:00:00+03:00\",\n    \"valid_to\": \"2023-06-29T23:59:59.999999+03:00\",\n    \"periods\": [],\n    \"calculation\": {\n        \"data\": {\n            \"kbm\": 1,\n            \"drivers\": [\n                {\n                    \"last_name\": \"Гурбановская\",\n                    \"birth_date\": \"1976-06-15\",\n                    \"credential\": [\n                        {\n                            \"number\": \"619604\",\n                            \"series\": \"7030\",\n                            \"issue_date\": \"2017-05-30\",\n                            \"credential_type\": \"DRIVER_LICENSE\"\n                        }\n                    ],\n                    \"first_name\": \"Леся\",\n                    \"patronymic\": \"Богдановна\",\n                    \"previous_last_name\": null,\n                    \"driving_experience_started\": \"2017-05-30\"\n                }\n            ],\n            \"periods\": [],\n            \"car_type\": \"B\",\n            \"max_mass\": 0,\n            \"valid_to\": \"2023-06-29\",\n            \"valid_from\": \"2022-06-30\",\n            \"drivers_ids\": [\n                \"fb542292-ca24-4e9c-b99a-437adcfb7b86\"\n            ],\n            \"seats_count\": 0,\n            \"engine_power\": 211,\n            \"insurant_type\": \"NATURAL_PERSON\",\n            \"is_multidrive\": false,\n            \"has_car_trailer\": false,\n            \"target_of_using\": \"PERSONAL\",\n            \"insurance_period\": 8,\n            \"owner_registration\": {\n                \"kt1\": 1.54,\n                \"kt2\": 1,\n                \"okato\": \"69401000000\",\n                \"code_kladr\": \"7000000100000\",\n                \"address_type\": \"LEGAL_ADDRESS\",\n                \"address_query\": \"г Томск, ул Говорова, д 62 к 30\",\n                \"city_kladr_id\": \"7000000100000\",\n                \"region_kladr_id\": \"7000000000000\"\n            },\n            \"insurance_period_kterm\": \"1.00\",\n            \"insurance_period_month\": 12,\n            \"is_kbm_request_with_error\": true,\n            \"is_car_without_registration\": false\n        },\n        \"coeffs\": {\n            \"Kbm\": 1,\n            \"Klim\": 1,\n            \"Kterm\": 1,\n            \"S_min\": 6427.84,\n            \"Kengine\": 1.6,\n            \"Kexpage\": 0.95,\n            \"Kregion\": 1.54,\n            \"Ktrailer\": 1,\n            \"Tbase_max\": 4942,\n            \"Tbase_min\": 2746,\n            \"kbm_class\": \"4\"\n        },\n        \"premium\": 11568.23,\n        \"is_default\": false\n    },\n    \"status\": \"DRAFT\",\n    \"insured_object\": \"63bde216-fed7-44b6-8ddf-e62612d6af10\",\n    \"prolongation\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Запрос рассчета стоимости",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/v3/agreements/{{agreement_id}}/results/{{ins_company_code}}",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v3",
+								"agreements",
+								"{{agreement_id}}",
+								"results",
+								"{{ins_company_code}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Запрос рассчета стоимости RESPONSE",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{http_schema}}://{{host}}/v3/agreements/{{agreement_id}}/results/MAKS_1",
+									"protocol": "{{http_schema}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v3",
+										"agreements",
+										"{{agreement_id}}",
+										"results",
+										"MAKS_1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Jun 2022 11:14:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1532"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"parameters\": {\n        \"premium\": \"11804.66\",\n        \"segment\": \"Сегмент 10\",\n        \"commission\": {\n            \"deps\": [\n                {\n                    \"give\": \"0.00\",\n                    \"stay\": \"0.00\",\n                    \"title\": \"Умный Полис\",\n                    \"dep_id\": \"8e909b9f-395d-421d-869f-f499620e98f4\",\n                    \"commission_type\": \"PERCENT\",\n                    \"commission_value\": \"2.00\"\n                },\n                {\n                    \"give\": \"0.00\",\n                    \"stay\": \"0.00\",\n                    \"title\": \"Умный Полис Stage\",\n                    \"dep_id\": \"e8962ff0-febf-4f09-8135-eb3c6d21ee13\",\n                    \"commission_type\": \"PERCENT\",\n                    \"commission_value\": null\n                },\n                {\n                    \"give\": \"0.00\",\n                    \"stay\": \"0.00\",\n                    \"title\": \"тестовые доступы\",\n                    \"dep_id\": \"8fcb3b63-f9f1-4b55-bc26-724f0310937d\",\n                    \"commission_type\": \"PERCENT\",\n                    \"commission_value\": null\n                },\n                {\n                    \"give\": \"0.00\",\n                    \"stay\": \"0.00\",\n                    \"title\": \"Тест Тест\",\n                    \"dep_id\": \"2877cff8-c44e-4cd5-b210-e11740cb9730\",\n                    \"commission_type\": \"PERCENT\",\n                    \"commission_value\": null\n                },\n                {\n                    \"give\": \"0.00\",\n                    \"stay\": \"0.00\",\n                    \"title\": \"Тест2\",\n                    \"dep_id\": \"bb3c719e-cdfa-4646-9d72-8ab116f869d9\",\n                    \"commission_type\": null,\n                    \"commission_value\": null\n                }\n            ],\n            \"creator_premium\": \"0.00\"\n        },\n        \"is_egarant\": false,\n        \"end_calculation\": 1654859671.9279873,\n        \"commission_value\": 0,\n        \"result_parameters\": {\n            \"kbm\": 1.17,\n            \"policy_id\": \"LNG64020243\",\n            \"contract_id\": \"64020243\",\n            \"kbm_doc_number\": \"106593090\",\n            \"kbm_calc_number\": \"22b4cbf3-9d6f-4165-a5a9-db6ccbf2921f\",\n            \"valid_from_days\": 1\n        },\n        \"start_calculation\": 1654859645.1377263,\n        \"integrated_agency_code\": \"MAKS_1\",\n        \"integrated_company_code\": \"MAKS\",\n        \"is_check_status_allowed\": false,\n        \"integrated_company_title\": \"МАКС, АО\"\n    },\n    \"is_active\": true,\n    \"available_payment_methods\": [\n        \"INTEGRATED_COMPANY\"\n    ],\n    \"chain_id\": \"1e3b3d9b-d687-47d4-a1df-a0f2c5c13f9a\",\n    \"commission\": {\n        \"creator_premium\": \"0.00\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Справочники",
+			"item": [
+				{
+					"name": "Срок страхования",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/v1/dicts/insurance_periods",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"dicts",
+								"insurance_periods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Договор в архиве",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/v1/agreements/{{agreements_id}}",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agreements",
+								"{{agreements_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Страховые компании",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_v1}}/companies/",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Token {{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
